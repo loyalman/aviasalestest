@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@id/mainFragment"
+        android:name="ru.loyalman.android.aviasalesloginov.featurecities.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@id/nav_cities_to_city_picker"
+            app:destination="@id/cityPickerDialog" />
+        <action
+            android:id="@+id/nav_cities_to_map"
+            app:destination="@id/searchingMapFragment"
+            app:enterAnim="@anim/ac_fade_in_animation"
+            app:exitAnim="@anim/ac_fade_out_animation"
+            app:popEnterAnim="@anim/ac_fade_in_animation"
+            app:popExitAnim="@anim/ac_fade_out_animation"
+            />
+    </fragment>
+
+
+    <dialog
+        android:id="@+id/cityPickerDialog"
+        android:name="ru.loyalman.android.aviasalesloginov.citypicker.CityPickerDialog"
+        android:label="CityPickerDialog"
+        tools:layout="@layout/dialog_bottom_city_picker">
+        <argument
+            android:name="requestCode"
+            app:argType="string" />
+    </dialog>
+    <fragment
+        android:id="@+id/searchingMapFragment"
+        android:name="ru.loyalman.android.aviasalesloginov.featuresearchmap.ui.SearchingMapFragment"
+        android:label="SearchingMapFragment"
+        tools:layout="@layout/fragment_map">
+        <argument
+            android:name="cityFrom"
+            app:argType="ru.loyalman.android.aviasalesloginov.models.CityDto" />
+        <argument
+            android:name="cityTo"
+            app:argType="ru.loyalman.android.aviasalesloginov.models.CityDto" />
+    </fragment>
+
+
+</navigation>

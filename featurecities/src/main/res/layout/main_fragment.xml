@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_container">
+
+    <View
+        android:id="@+id/etDoubleContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_screen_to_view"
+        android:layout_marginEnd="@dimen/margin_screen_to_view"
+        android:elevation="1dp"
+        android:outlineProvider="background"
+        android:background="@drawable/bg_double_search"
+        app:layout_constraintBottom_toBottomOf="@id/etCityTo"
+        app:layout_constraintTop_toTopOf="@id/etCityFrom" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/etCityFrom"
+        style="@style/CommonEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_screen_to_view"
+        android:layout_marginEnd="@dimen/margin_screen_to_view"
+        android:hint="@string/hint_from"
+        android:importantForAutofill="no"
+        android:inputType="textCapWords"
+        android:elevation="1dp"
+        app:layout_constraintBottom_toTopOf="@id/etCityTo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/etCityTo"
+        style="@style/CommonEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_screen_to_view"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="@dimen/margin_screen_to_view"
+        android:hint="@string/hint_to"
+        android:elevation="1dp"
+        android:importantForAutofill="no"
+        android:inputType="textCapWords"
+        app:layout_constraintBottom_toTopOf="@id/btnSearch"
+        app:layout_constraintTop_toBottomOf="@id/etCityFrom" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnSearch"
+        style="@style/CommonActionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_screen_to_view"
+        android:layout_marginTop="@dimen/margin_screen_to_view"
+        android:layout_marginEnd="@dimen/margin_screen_to_view"
+        android:importantForAutofill="no"
+        android:inputType="textCapWords"
+        android:text="@string/action_search"
+        android:elevation="1dp"
+        android:outlineProvider="background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etCityTo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

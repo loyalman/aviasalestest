@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs'
+apply from: "$gradleDir/config.gradle"
+apply from: "$gradleDir/deps.gradle"
+
+def implementationLibs = [
+        project(':base'),
+        project(':models'),
+        deps.android.x.constraintlayout,
+
+        deps.toothpick.runtimekotlin,
+        deps.android.arch.lifecycle,
+        deps.android.arch.viewmodel,
+        deps.android.arch.livedata,
+        deps.viewBinding,
+        deps.android.arch.navigation.ui,
+        deps.android.arch.navigation.fragment,
+        deps.android.x.activity,
+]
+def kaptDependencies = [
+        deps.toothpick.compiler,
+]
+
+dependencies {
+    implementationLibs.forEach { lib -> implementation(lib) }
+    kaptDependencies.forEach { lib -> kapt(lib) }
+}

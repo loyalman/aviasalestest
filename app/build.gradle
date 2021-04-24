@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs'
+apply from: "$gradleDir/config.gradle"
+apply from: "$gradleDir/deps.gradle"
+
+android {
+
+    defaultConfig {
+        applicationId "ru.loyalman.android.aviasalesloginov"
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            outputFileName = outputFileName.replace(".apk", "-${config.versionCode}.apk")
+        }
+    }
+
+}
+
+def implementationLibs = [
+        deps.android.x.design,
+        deps.googleServices.maps,
+        deps.toothpick.runtimekotlin,
+
+        project(":base"),
+        project(":models"),
+        project(":citypicker"),
+        project(":featurecities"),
+        project(":featuresearchmap"),
+        project(":repository"),
+
+        deps.okhttp.logging,
+        deps.timber,
+        deps.android.arch.navigation.ui,
+        deps.android.arch.navigation.fragment,
+        deps.retrofit.gsonConverter,
+        deps.viewBinding,
+        deps.adapterDelegate,
+]
+
+def testImplementationLibs = [
+        deps.junit,
+]
+
+def androidTestImplementationLibs = [
+        deps.android.x.junit,
+        deps.android.x.espresso.core,
+]
+
+def kaptLibs = [
+        deps.toothpick.compiler,
+]
+
+dependencies {
+    implementationLibs.forEach { lib -> implementation(lib) }
+    testImplementationLibs.forEach { lib -> testImplementation(lib) }
+    androidTestImplementationLibs.forEach { lib -> androidTestImplementation(lib) }
+    kaptLibs.forEach { lib -> kapt(lib) }
+}

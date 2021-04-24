@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="mainFragment" type="id" />
+
+    <item name="nav_cities_to_city_picker" type="id" />
+    <item name="nav_cities_to_map" type="id" />
+
+    <string name="argument_requestCode">requestCode</string>
+    <string name="argument_cityFrom">cityFrom</string>
+    <string name="argument_cityTo">cityTo</string>
+</resources>

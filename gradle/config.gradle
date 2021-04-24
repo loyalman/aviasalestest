@@ -1,0 +1,48 @@
+ext {
+    config = [
+            'compileSdkVersion'        : 29,
+            'targetSdkVersion'         : 29,
+            'buildToolsVersion'        : "29.0.3",
+            'minSdkVersion'            : 21,
+            'versionCode'              : 1,
+            'versionName'              : "1.0",
+            'testInstrumentationRunner': "androidx.test.runner.AndroidJUnitRunner",
+    ]
+}
+android {
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
+        testInstrumentationRunner config.testInstrumentationRunner
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        freeCompilerArgs = ["-Xallow-result-return-type"]
+    }
+    lintOptions {
+        warningsAsErrors true
+        abortOnError true
+        absolutePaths false
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding false
+    }
+    packagingOptions {
+        exclude("META-INF/*.kotlin_module")
+    }
+}

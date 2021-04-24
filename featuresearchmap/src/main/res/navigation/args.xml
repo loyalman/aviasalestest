@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/args"
+    app:startDestination="@id/searchingMapFragment">
+
+    <fragment
+        android:id="@+id/searchingMapFragment"
+        android:name="ru.loyalman.android.aviasalesloginov.featuresearchmap.ui.SearchingMapFragment"
+        android:label="SearchingMapFragment">
+        <argument
+            android:name="cityFrom"
+            app:argType="ru.loyalman.android.aviasalesloginov.models.CityDto" />
+        <argument
+            android:name="cityTo"
+            app:argType="ru.loyalman.android.aviasalesloginov.models.CityDto" />
+    </fragment>
+</navigation>

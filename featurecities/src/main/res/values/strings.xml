@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hint_from">Город отправления</string>
+    <string name="hint_to">Город назначения</string>
+
+    <string name="action_search">Поиск</string>
+</resources>

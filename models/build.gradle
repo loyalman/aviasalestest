@@ -1,0 +1,14 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply from: "$gradleDir/config.gradle"
+apply from: "$gradleDir/deps.gradle"
+
+def implementationLibs = [
+        deps.kotlin.stdlib.jdk8,
+        deps.retrofit.gsonConverter,
+]
+
+dependencies {
+    implementationLibs.forEach { lib -> implementation(lib) }
+}

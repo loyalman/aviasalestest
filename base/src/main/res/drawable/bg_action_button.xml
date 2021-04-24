@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="true">
+        <ripple android:color="@color/ripple_action">
+            <item>
+                <shape android:shape="rectangle">
+                    <corners android:radius="@dimen/radius_common" />
+                    <solid android:color="@color/action_enabled" />
+                </shape>
+            </item>
+        </ripple>
+    </item>
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/radius_common" />
+            <solid android:color="@color/action_disabled" />
+        </shape>
+    </item>
+</selector>

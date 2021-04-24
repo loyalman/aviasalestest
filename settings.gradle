@@ -1,0 +1,8 @@
+include ':featurecities'
+include ':repository'
+include ':citypicker'
+include ':models'
+include ':base'
+include ':featuresearchmap'
+include ':app'
+rootProject.name = "AviaSales Loginov"
