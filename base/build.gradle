@@ -14,12 +14,8 @@ def implementationLibs = [
 
         deps.android.arch.navigation.ui,
         deps.android.arch.navigation.fragment,
-        deps.android.x.biometric,
-        deps.encryption.spongycastle.core,
-        deps.encryption.spongycastle.provider,
         deps.retrofit.gsonConverter,
         deps.viewBinding,
-        deps.adapterDelegate,
 ]
 def kaptDependencies = [
         deps.toothpick.compiler,

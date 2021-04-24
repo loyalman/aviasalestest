@@ -33,7 +33,6 @@ ext {
             'timber'             : '4.7.1',
             'junit'              : '4.12',
             'gson'               : '2.8.2',
-            'truth'              : '0.39',
             'inject'             : '1@jar',
             'robolectric'        : '3.5',
             'apacheCommons'      : '3.7',
@@ -103,13 +102,6 @@ ext {
                             'runnerx': "androidx.test:runner:${versions.androidx}",
                             'rulesx' : "androidx.test:rules:${versions.androidx}",
                     ],
-            ],
-            'vk'             : [
-                    'superappkit': "com.vk.superappkit:superappkit:${versions.superappkit}",
-                    'sakUi'      : "com.vk.superappkit:ui-light:${versions.superappkit}",
-                    'ext'        : "com.vk.superappkit:extensions:${versions.superappkit}",
-                    'prefs'      : "com.vk.superappkit:libprefs:${versions.superappkit}",
-                    'color'      : "com.vk.superappkit:ui-palette:${versions.superappkit}",
             ],
             'mytracker'      : "com.my.tracker:mytracker-sdk:${versions.mytracker}",
             'sentry'         : [
@@ -201,7 +193,6 @@ ext {
                             'core'    : "com.madgag.spongycastle:core:${versions.spongycastle}",
                             'provider': "com.madgag.spongycastle:prov:${versions.spongycastle}",
                     ],
-                    //TODO https://jira.vkpay.ru/browse/VKPA-215: replace with something stable before release
                     'security'    : "androidx.security:security-crypto:1.1.0-alpha03",
             ],
             'lint'           : [
@@ -218,13 +209,10 @@ ext {
             'timber'         : "com.jakewharton.timber:timber:${versions.timber}",
             'gson'           : "com.google.code.gson:gson:${versions.gson}",
             'junit'          : "junit:junit:${versions.junit}",
-            'truth'          : "com.google.truth:truth:${versions.truth}",
             'inject'         : "javax.inject:javax.inject:${versions.inject}",
             'robolectric'    : "org.robolectric:robolectric:${versions.robolectric}",
             'apacheCommons'  : "org.apache.commons:commons-lang3:${versions.apacheCommons}",
             'viewBinding'    : "com.kirich1409.viewbindingpropertydelegate:viewbindingpropertydelegate:1.4.1",
-            'adapterDelegate': "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.0",
-            'aboutLibraries' : "com.mikepenz:aboutlibraries:6.2.3",
     ]
     buildPlugins = [
             'gradle'        : 'com.android.tools.build:gradle:4.1.3',

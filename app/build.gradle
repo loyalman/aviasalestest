@@ -38,7 +38,6 @@ def implementationLibs = [
         deps.android.arch.navigation.fragment,
         deps.retrofit.gsonConverter,
         deps.viewBinding,
-        deps.adapterDelegate,
 ]
 
 def testImplementationLibs = [
