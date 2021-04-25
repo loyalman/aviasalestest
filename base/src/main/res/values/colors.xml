@@ -17,4 +17,5 @@
     <color name="ripple_action">@color/purple_500</color>
     <color name="bg_map_marker">#CBFABF0D</color>
     <color name="stroke_map_marker">@color/white</color>
+    <color name="point_on_map">#444444</color>
 </resources>

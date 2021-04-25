@@ -2,6 +2,7 @@ package ru.loyalman.android.aviasalesloginov.featuresearchmap.ui
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -17,7 +18,6 @@ import ru.loyalman.android.aviasalesloginov.base.showSimpleError
 import ru.loyalman.android.aviasalesloginov.base.viewModel
 import ru.loyalman.android.aviasalesloginov.featuresearchmap.*
 import ru.loyalman.android.aviasalesloginov.featuresearchmap.databinding.FragmentMapBinding
-import ru.loyalman.android.aviasalesloginov.featuresearchmap.toLatLng
 import java.util.*
 
 
@@ -71,9 +71,11 @@ class SearchingMapFragment : BaseFragment<FragmentMapBinding, SearchingMapEvent>
                 requireContext().getCityBitmap(args.cityTo.shortName)
             )
 
+            val pointColor = ContextCompat.getColor(requireContext(), R.color.point_on_map)
             val center = getPointsCenter(latLonFrom, latLonTo)
-            pls.addAll(googleMap.drawCurveOnMap(latLonFrom, center, false))
-            pls.addAll(googleMap.drawCurveOnMap(latLonTo, center, true))
+//            pls.addAll(googleMap.drawCurveOnMap(latLonFrom, center, false))
+//            pls.addAll(googleMap.drawCurveOnMap(latLonTo, center, true))
+            pls.addAll(googleMap.drawBezierOnMap(latLonFrom, latLonTo, pointColor))
             handlePlane(googleMap, latLonFrom)
         }
     }
